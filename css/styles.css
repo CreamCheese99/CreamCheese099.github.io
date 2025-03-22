@@ -85,7 +85,7 @@ button#startGame:hover {
 
 /* === พื้นหลังของ Canvas (เกม) === */
 #asteroidCanvas {
-    background: url('../image/bgGame.png') no-repeat center center;
+    background: url('../image/asteroid.png') no-repeat center center;
     background-size: cover;
     border: 2px solid white;
     display: block;

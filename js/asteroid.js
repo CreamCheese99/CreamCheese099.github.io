@@ -5,6 +5,7 @@ let ship = { x: 225, y: 350, width: 50, height: 50 };
 let bullets = [];
 let asteroids = [];
 let score = 0;
+let scoreElement = document.getElementById("score"); // Get the score element
 
 function drawShip() {
     ctx.fillStyle = "red";
@@ -40,9 +41,19 @@ function checkCollisions() {
                 bullet.y < asteroid.y + 30 &&
                 bullet.y + 10 > asteroid.y
             ) {
+                // Remove bullet and asteroid on collision
                 bullets.splice(bIndex, 1);
                 asteroids.splice(aIndex, 1);
                 score += 10;
+
+                // Animate score shift
+                scoreElement.style.transform = "translateY(-10px)";
+                setTimeout(() => {
+                    scoreElement.style.transform = "translateY(0)";
+                }, 100);
+
+                // Update the score display
+                scoreElement.innerText = score;
             }
         });
     });
@@ -54,7 +65,7 @@ function checkCollisions() {
             asteroid.y < ship.y + ship.height &&
             asteroid.y + 30 > ship.y
         ) {
-            alert(`Game Over! คะแนน: ${score}`);
+            alert(`Game Over! Score: ${score}`);
             document.location.reload();
         }
     });
@@ -76,8 +87,10 @@ document.addEventListener("keydown", (e) => {
     if (e.key === " ") bullets.push({ x: ship.x + 22, y: ship.y });
 });
 
+// Create asteroids at regular intervals
 setInterval(() => {
     asteroids.push({ x: Math.random() * 470, y: 0 });
 }, 1000);
 
+// Start game loop
 setInterval(gameLoop, 50);
