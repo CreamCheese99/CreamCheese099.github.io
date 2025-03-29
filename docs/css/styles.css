@@ -191,7 +191,7 @@ button#startGame:hover {
         /* ปรับแต่งสไตล์ของแต่ละรูป */
         .gallery.sea .gallery-item {
             flex: 0 0 auto;
-            width: 300px; /* กำหนดขนาดรูปให้เล็กลง */
+            width: 400px; /* กำหนดขนาดรูปให้เล็กลง */
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* เพิ่มเงาให้ดูมีมิติ */
