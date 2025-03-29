@@ -28,7 +28,7 @@ header {
 #h2{
     color: rgb(102, 86, 118);
     font-family: sans-serif;
-    text-align: left;
+    text-align: center;
     margin-top: 40px;
     margin-left: 20px;
 }
@@ -163,32 +163,58 @@ button#startGame:hover {
 }
 
 /* === Gallery === */
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 15px;
-    padding: 20px;
-    max-width: 900px;
-    margin: auto;
-}
-
-.gallery-item {
-    overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.gallery-item img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    transition: transform 0.3s ease-in-out;
-}
-
-/* เอฟเฟกต์เมื่อโฮเวอร์ที่รูป */
-.gallery-item img:hover {
-    transform: scale(1.1);
-}
+        /* ปรับสไตล์ของแกลเลอรีให้มีความหลากหลาย */
+        .gallery {
+            display: grid;
+            gap: 15px;
+            padding: 20px;
+            max-width: 900px;
+            margin: auto;
+        }
+        
+        /* สไตล์ของแต่ละเซ็ตให้ต่างกัน */
+        .gallery.dog {
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        }
+        .gallery.sport {
+            grid-template-columns: 1fr 1fr;
+        }
+        .gallery.sea {
+            display: flex;
+            overflow-x: auto;
+            white-space: nowrap;
+            gap: 15px; /* เพิ่มระยะห่างระหว่างรูป */
+            padding: 15px;
+            scroll-behavior: smooth; /* ทำให้เลื่อนนุ่มนวล */
+        }
+        
+        /* ปรับแต่งสไตล์ของแต่ละรูป */
+        .gallery.sea .gallery-item {
+            flex: 0 0 auto;
+            width: 300px; /* กำหนดขนาดรูปให้เล็กลง */
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* เพิ่มเงาให้ดูมีมิติ */
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        .gallery-item {
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .gallery-item img {
+            width:100%;
+            height: auto;
+            object-fit: cover;
+        }
+        
+        /* เอฟเฟกต์เมื่อโฮเวอร์ */
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
 
 /* === Footer === */
 footer {
