@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="th"> 
+<head>
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>เกมยิงอุกกาบาต | My Website</title> 
+    <link rel="stylesheet" href="../css/styles.css"> 
+</head>
+<body>
+    <header> <!-- ส่วนหัวของหน้า -->
+        <h1>Game Asteroid</h1> <!-- หัวเรื่องหลักของหน้า -->
+        <nav> <!-- เมนูนำทาง -->
+            <ul> <!-- รายการเมนู -->
+                <li><a href="index.html">Home</a></li> 
+                <li><a href="project.html" class="active">Game</a></li> 
+                <li><a href="personal.html">Personal</a></li> 
+            </ul>
+        </nav>
+    </header>
+
+    <main> <!-- เนื้อหาหลักของหน้า -->
+        <section class="game-container"> 
+            <h2>Game Asteroid 🚀</h2> 
+            <p>เป้าหมาย: ยิงอุกกาบาตที่ตกลงมาให้ได้มากที่สุด!</p> 
+            <p>การควบคุม: ใช้ <b>⬅️➡️</b> บังคับเครื่องบิน และ <b>Spacebar</b> ยิง</p> 
+            <button id="startGame">เริ่มเกม</button> 
+            <div class="score-board">คะแนน: <span id="score">0</span></div> 
+            <canvas id="asteroidCanvas" width="500" height="400"></canvas> 
+            <!-- ลิงก์ที่มาของภาพพื้นหลัง -->
+            <a href="https://th.pngtree.com/freebackground/space-game-interstellar-exploration-cosmic-background_1590771.html">ภาพพื้นหลังฟรีจาก th.pngtree.com</a>
+        </section>
+    </main>
+
+    <footer> <!-- ส่วนท้ายของหน้า -->
+        <p>&copy; 2025 My Website</p> 
+    </footer>
+
+    <!-- เชื่อมโยงไฟล์ JavaScript สำหรับเกม -->
+    <script src="../js/asteroid.js"></script>
+</body>
+</html>
