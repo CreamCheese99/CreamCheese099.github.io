@@ -8,17 +8,38 @@
 /* === ตั้งค่า body === */
 body {
     font-family: Arial, sans-serif;
-    background-color: #0a0a2a; /* สีพื้นหลังเข้มแนวอวกาศ */
-    color: white;
+    background:  linear-gradient(to top, #d292b66d 0%, #e6d2633c 100%);
+    text-align: center;
+}
+
+#bodyindex {
+    font-family: Arial, sans-serif;
+    background:  white;
     text-align: center;
 }
 
 /* === Header === */
 header {
-    background: #007bff;
-    color: white;
+    background:  linear-gradient(to top, #fad0c4 0%, #ffd1ff 100%);
+    color: rgb(93, 24, 70);
     padding: 15px;
 }
+
+#h2{
+    color: rgb(102, 86, 118);
+    font-family: sans-serif;
+    text-align: left;
+    margin-top: 40px;
+    margin-left: 20px;
+}
+#p{
+    color: rgb(102, 86, 118);
+    font-family: sans-serif;
+    text-align: left;
+    margin-top: 20px; 
+    margin-left: 20px;
+}
+
 
 /* === Navigation === */
 nav ul {
@@ -33,13 +54,14 @@ nav ul li {
 }
 
 nav ul li a {
-    color: white;
+    color: rgb(75, 42, 90);
     text-decoration: none;
     font-size: 18px;
+    font-weight: bold;
 }
 
 nav ul li a.active {
-    border-bottom: 2px solid yellow;
+    border-bottom: 2px solid rgb(193, 168, 177);
 }
 
 /* === Container หลักของแต่ละหน้า === */
@@ -51,11 +73,12 @@ nav ul li a.active {
 
 /* === Game Container === */
 .game-container {
-    background: rgba(255, 255, 255, 0.1);
+    background: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
-    width: 550px;
+    box-shadow: 0 0 15px rgba(209, 52, 115, 0.474);
+    width: 90%;
+    max-width: 550px;
     margin: 30px auto;
     text-align: center;
 }
@@ -64,12 +87,13 @@ nav ul li a.active {
 button#startGame {
     padding: 10px 20px;
     font-size: 18px;
-    background: yellow;
+    background:linear-gradient(to right, #fa709a 0%, #fee140 100%);
     color: black;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     margin-bottom: 15px;
+  
 }
 
 button#startGame:hover {
@@ -100,7 +124,8 @@ button#startGame:hover {
     background: white;
     padding: 20px;
     margin: 20px auto;
-    width: 50%;
+    width: 90%;
+    max-width: 500px;
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     color: black;
@@ -137,6 +162,34 @@ button#startGame:hover {
     margin-top: 15px;
 }
 
+/* === Gallery === */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    padding: 20px;
+    max-width: 900px;
+    margin: auto;
+}
+
+.gallery-item {
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* เอฟเฟกต์เมื่อโฮเวอร์ที่รูป */
+.gallery-item img:hover {
+    transform: scale(1.1);
+}
+
 /* === Footer === */
 footer {
     background-color: #7a7a7a;
@@ -150,7 +203,7 @@ footer {
 /* === Responsive Design === */
 @media (max-width: 768px) {
     .profile-container {
-        width: 80%;
+        width: 90%;
     }
 
     .game-container {
